@@ -10,6 +10,12 @@ describe('#breedDetailsFromFile', () => {
       assert.equal(expectedDescription, bombay);
       done();
     });
-    // console.log(breedDetailsFromFile);
+  });
+
+  it('description should be undefined for a file that doesn\'t exist', (done) => {
+    breedDetailsFromFile('THISDOESNTEXIST', (bombay) => {
+      assert.equal(undefined, bombay);
+      done();
+    });
   });
 });
